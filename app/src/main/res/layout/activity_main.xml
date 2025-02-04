@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/contenedor"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Etiqueta Número 1 -->
+    <TextView
+        android:id="@+id/txtEtiquetaNum1"
+        android:text="Número 1:"
+        android:layout_marginTop="60dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Entrada Número 1 -->
+    <EditText
+        android:id="@+id/inputNum1"
+        android:hint="Ejemplo: 5"
+        android:layout_marginTop="50dp"
+        android:layout_marginLeft="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!-- Etiqueta Número 2 -->
+    <TextView
+        android:id="@+id/txtEtiquetaNum2"
+        android:text="Número 2:"
+        android:layout_marginTop="120dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <!-- Entrada Número 2 -->
+    <EditText
+        android:id="@+id/inputNum2"
+        android:hint="Ejemplo: 4.8"
+        android:layout_marginTop="110dp"
+        android:layout_marginLeft="80dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!-- Menú de Opciones -->
+    <Spinner
+        android:id="@+id/spOpciones"
+        android:layout_below="@id/inputNum2"
+        android:entries="@array/operaciones"
+        android:layout_marginTop="40dp"
+        android:layout_marginLeft="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+    <!-- Resultado -->
+    <TextView
+        android:id="@+id/txtResultado"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_below="@id/spOpciones"
+        android:layout_marginTop="40dp"
+        android:text="Resultado: ?" />
+
+    <!-- Botón Ejecutar -->
+    <Button
+        android:id="@+id/btnEjecutar"
+        android:layout_below="@id/txtResultado"
+        android:layout_marginTop="40dp"
+        android:text="Ejecutar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+</RelativeLayout>
