@@ -1,15 +1,3 @@
 <resources>
-    <string name="app_name">miprimeraaplicacion</string>
-        <string-array name="operaciones">
-            <item>Adición</item>
-            <item>Sustracción</item>
-            <item>Multiplicación</item>
-            <item>División</item>
-            <item>Potencia</item>
-            <item>Porcentaje</item>
-            <item>Raíz Cuadrada</item>
-            <item>Factorial</item>
-            <item>Residuo</item>
-            <item>Número Mayor</item>
-        </string-array>
+
 </resources>
