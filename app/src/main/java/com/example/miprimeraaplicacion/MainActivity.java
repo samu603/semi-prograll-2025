@@ -39,46 +39,34 @@ public class MainActivity extends AppCompatActivity {
 
     private void iniciar() {
         if (sensor != null) {
-
             sensorManager.registerListener(sensorEventListener, sensor, 2000 * 1000);
         }
     }
 
     private void detener() {
         if (sensor != null) {
-
             sensorManager.unregisterListener(sensorEventListener);
         }
     }
 
     private void sensorLuz() {
-        tempVal = findViewById(R.id.lblSensorProximidad);
+        tempVal = findViewById(R.id.lblSensorAcelerometro);
         sensorManager = (SensorManager) getSystemService(SENSOR_SERVICE);
-        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_PROXIMITY);
+        sensor = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER);
 
         if (sensor == null) {
-            tempVal.setText("Tu dispositivo NO tiene el sensor de proximidad");
+            tempVal.setText("Tu dispositivo NO tiene el sensor de acelerometro");
             finish();
         }
-
 
         sensorEventListener = new SensorEventListener() {
             @Override
             public void onSensorChanged(SensorEvent event) {
-
-                if (event.sensor.getType() == Sensor.TYPE_PROXIMITY) {
-                    double valor = event.values[0];
-
-                    tempVal.setText("Proximidad: " + valor);
-
-
-                    if (valor <= 4) {
-                        getWindow().getDecorView().setBackgroundColor(Color.BLACK);
-                    } else if (valor <= 8) {
-                        getWindow().getDecorView().setBackgroundColor(Color.GRAY);
-                    } else {
-                        getWindow().getDecorView().setBackgroundColor(Color.WHITE);
-                    }
+                if (event.sensor.getType() == Sensor.TYPE_ACCELEROMETER) {
+                    double x = event.values[0];
+                    double y = event.values[1];
+                    double z = event.values[2];
+                    tempVal.setText("Desplazamiento X= "+ x +"; Y= "+ y + "; Z= "+ z);
                 }
             }
 
